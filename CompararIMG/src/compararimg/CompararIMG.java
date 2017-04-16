@@ -1,6 +1,7 @@
 package compararimg;
 
 import java.io.FileReader;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,7 +12,7 @@ public class CompararIMG {
     public static void main(String[] args) {
         try {
             boolean found = false;
-            String image1 = "gymDog.jpg";
+            String image1 = "gymDog3.jpg";
             String image2 = "gymDog2.jpg";
             FileReader fr1 = new FileReader ( image1 );
             FileReader fr2 = new FileReader ( image2 );
@@ -28,8 +29,14 @@ public class CompararIMG {
                     break;
                 }
             }
-            if ( found ) System.out.println ( "Imagenes iguales" );
-            else System.out.println ( "Imagenes diferentes" );
+            if ( found ) {
+                //System.out.println ( "Imagenes iguales" );
+                JOptionPane.showMessageDialog(null, "Las Imagenes Son Iguales");
+            }
+            else {
+                //System.out.println ( "Imagenes diferentes" );
+                JOptionPane.showMessageDialog(null, "Las Imagenes Son Diferentes");
+            }
         }
         catch (Exception e){
             e.printStackTrace();
